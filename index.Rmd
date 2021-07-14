@@ -1,9 +1,7 @@
 ---
-title: "Presentation Ninja"
-subtitle: "⚔<br/>with xaringan"
-author: "Yihui Xie"
-institute: "RStudio, PBC"
-date: "2016/12/12 (updated: `r Sys.Date()`)"
+title: "The p-value"
+author: "Stefano Coretta"
+date: "2021/07/21"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -13,13 +11,60 @@ output:
       countIncrementalSlides: false
 ---
 
-background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/be/Sharingan_triple.svg)
-
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
 ```
 
-???
+```{r xaringanExtra, echo=FALSE}
+xaringanExtra::use_xaringan_extra(c("tachyons"))
+```
 
-Image credit: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Sharingan_triple.svg)
+# Research question
 
+.center[![](img/023-woman.png)]
+
+---
+class: center middle
+
+# Does light colour affect plant growth?
+
+![](img/nhst-question.png)
+
+---
+
+# The Null and the Alternative
+
+
+---
+class: center middle
+
+# Light colour does NOT affect plant growth.
+
+![](img/nhst-null.png)
+
+---
+class: center middle
+
+# Light colour DOES affect plant growth.
+
+![](img/nhst-alternative.png)
+
+---
+
+# The Null and the Alternative
+
+.pull-left[
+.f1[.center[$$H_0$$]]
+
+.center[NULL]
+
+$$growth_{red} = growth_{blue}$$
+]
+
+.pull-left[
+.f1[.center[$$H_A$$]]
+
+.center[ALTERNATIVE]
+
+$$growth_{red} \neq growth_{blue}$$
+]
