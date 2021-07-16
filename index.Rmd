@@ -9,62 +9,97 @@ output:
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
+      ratio: 16:9
+      beforeInit: "macros.js"
+    css: ["default", "shinobi", "metropolis-fonts"]
 ---
 
 ```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
 options(htmltools.dir.version = FALSE)
+library(tidyverse)
+theme_set(theme_minimal())
 ```
 
 ```{r xaringanExtra, echo=FALSE}
 xaringanExtra::use_xaringan_extra(c("tachyons"))
 ```
 
-# Research question
-
-.center[![](img/023-woman.png)]
-
----
 class: center middle
 
-# Does light colour affect plant growth?
+![](img/nhst-p-value.png)
 
-![](img/nhst-question.png)
+???
+
+We wanted to know if the colour of a light a plant is exposed too has an effect on the rate of growth of the plant.
+
+So we ran an experiment: a group of plants were exposed to red light and another group was exposed to blue light.
+
+After a month, we measured the height of the plants in the two groups and we found that the plants exposed to the blue light are on average 2 cm taller than the plants exposed to the red light.
+
+We then ran a statistical test which returned a *p*-value ($p = 0.048$)
+
+What does the *p*-value mean?
 
 ---
 
-# The Null and the Alternative
-
-
----
 class: center middle
 
-# Light colour does NOT affect plant growth.
+![](img/nhst-replicate-1.png)
 
-![](img/nhst-null.png)
+Let's step back a moment.
+
+In this experiment we got a result of +2cm.
+
+But this is just ONE experiment.
 
 ---
+
 class: center middle
 
-# Light colour DOES affect plant growth.
+![](img/nhst-replicate-2.png)
 
-![](img/nhst-alternative.png)
+So, now we want to know whether the result we observed in this experiment would be observed again if we ran many more identical experiments (say, 100 experiments more).
 
 ---
 
-# The Null and the Alternative
+class: center middle
 
-.pull-left[
-.f1[.center[$$H_0$$]]
+![](img/nhst-replicate-3.png)
 
-.center[NULL]
+???
 
-$$growth_{red} = growth_{blue}$$
-]
+We want to know that because it is possible that we got +2cm in this experiment, but we could get 0 in any other repetition of the experiment.
 
-.pull-left[
-.f1[.center[$$H_A$$]]
+And we don't want this to happen! (That we find a difference of 2cm while in reality there is no difference)
 
-.center[ALTERNATIVE]
+---
 
-$$growth_{red} \neq growth_{blue}$$
-]
+class: center middle
+
+![:scale 70%](img/nhst-assume-null.png)
+
+???
+
+So what we do is, we assume that in reality there is no difference (i.e. colour of light does NOT affect plant growth).
+
+---
+
+class: center middle
+
+```{r fig.width=13, fig.height=8}
+x <- seq(-4, 4, by = 0.01)
+y <- dnorm(x)
+
+ggplot() +
+  aes(x, y) +
+  geom_ribbon(aes(ymin = 0, ymax = y), fill = "#7570b3", alpha = 0.25) +
+  geom_segment(aes(x = 0, y = 0, xend = 0, yend = max(y)), colour = "#d95f02", size = 3) +
+  annotate("text", x = 0, y = -0.025, label = "0", size = 25/.pt) +
+  theme_void() +
+  annotate("text", x = -2, y = 0.4, label = "high probability", size = 25/.pt) +
+  annotate("text", x = 2, y = 0.1, label = "low probability", size = 25/.pt)
+```
+
+
+
