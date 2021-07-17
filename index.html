@@ -31,13 +31,13 @@ class: center middle
 
 ???
 
-We wanted to know if the colour of a light a plant is exposed too has an effect on the rate of growth of the plant.
+Image we want to know if the colour of a light a plant is exposed to has an effect on the rate of growth of the plant.
 
 So we ran an experiment: a group of plants were exposed to red light and another group was exposed to blue light.
 
 After a month, we measured the height of the plants in the two groups and we found that the plants exposed to the blue light are on average 2 cm taller than the plants exposed to the red light.
 
-We then ran a statistical test which returned a *p*-value ($p = 0.048$)
+We then ran a statistical test which returned a *p*-value ($p = 0.03$)
 
 What does the *p*-value mean?
 
@@ -84,20 +84,48 @@ class: center middle
 
 ???
 
-So what we do is, we assume that in reality there is no difference (i.e. colour of light does NOT affect plant growth).
+So what we do is, we assume that in fact there is no difference (i.e. colour of light does NOT affect plant growth).
 
 ---
 
 class: center middle
 
-![](index_files/figure-html/unnamed-chunk-1-1.png)&lt;!-- --&gt;
+![](index_files/figure-html/null-probs-1.png)&lt;!-- --&gt;
+
+???
+
+If the null hypothesis is true, then observing no difference between plants exposed to red or blue light is very probable.
+
+On the other hand, observing differences that are further away from 0 (in the positive and negative side) is very unlikely (it has very low probability of occurring).
 
 ---
 
 class: center middle
 
-![](index_files/figure-html/unnamed-chunk-2-1.png)&lt;!-- --&gt;
+![](index_files/figure-html/rare-events-1.png)&lt;!-- --&gt;
 
+???
+
+In other words, if it is true that there is no difference, observing big differences is a rare event.
+
+So, `\(p\)` is the probability of finding a certain difference or even a bigger difference even though there is in fact no difference.
+
+We want that probability to be as low as possible.
+
+---
+
+class: center middle
+
+![](index_files/figure-html/p-value-1.png)&lt;!-- --&gt;
+
+
+???
+
+The probability of finding a difference of +2cm when there is no difference is 0.03, in other words 3% probability.
+
+We want that probability to be as low as possible, but how low is low?
+
+We will talk about this and other aspects of p-values in our next class!
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
