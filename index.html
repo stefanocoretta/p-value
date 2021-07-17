@@ -31,15 +31,15 @@ class: center middle
 
 ???
 
-Image we want to know if the colour of a light a plant is exposed to has an effect on the rate of growth of the plant.
+Imagine we want to know if the colour of a light a plant is exposed to has an effect on the rate of growth of the plant.
 
-So we ran an experiment: a group of plants were exposed to red light and another group was exposed to blue light.
+So we run an experiment: a group of plants is exposed to red light and another group is exposed to blue light.
 
-After a month, we measured the height of the plants in the two groups and we found that the plants exposed to the blue light are on average 2 cm taller than the plants exposed to the red light.
+After a month of exposure, we measure the height of the plants in the two groups and we find that the plants exposed to the blue light are on average 2cm taller than the plants exposed to the red light.
 
-We then ran a statistical test which returned a *p*-value ($p = 0.03$)
+We then run a statistical test which returns a *p*-value. More precisely, `\(p = 0.03\)`.
 
-What does the *p*-value mean?
+But what does the *p*-value mean?
 
 ---
 
@@ -51,18 +51,19 @@ class: center middle
 
 Let's step back a moment.
 
-In this experiment we got a result of +2cm.
+In this experiment we got a result of +2cm (plants exposed to blue light were 2cm taller than plants exposed to red light).
 
-But this is just ONE experiment.
+But this is just ONE experiment of many.
 
 ---
 
 class: center middle
 
 ![](img/nhst-replicate-2.png)
+
 ???
 
-So, now we want to know whether the result we observed in this experiment would be observed again if we ran many more identical experiments (say, 100 experiments more).
+So, now we want to know whether the result we observed in this one experiment would be observed again if we ran many more identical experiments (let's say, 100 experiments more, or 500, or an infinite number).
 
 ---
 
@@ -72,9 +73,9 @@ class: center middle
 
 ???
 
-We want to know that because it is possible that we got +2cm in this experiment, but we could get 0 in any other repetition of the experiment.
+We want to know this because it is possible that, although we observed a difference of +2cm in this experiment, we might have observed no difference (i.e. difference = 0cm) in any other repetition of the experiment.
 
-And we don't want this to happen! (That we find a difference of 2cm while in reality there is no difference)
+And we don't want this to happen! (We don't want to find a difference of +2cm while in fact there is no difference)
 
 ---
 
@@ -84,7 +85,11 @@ class: center middle
 
 ???
 
-So what we do is, we assume that in fact there is no difference (i.e. colour of light does NOT affect plant growth).
+So this is what we do.
+
+We assume that indeed there is in fact no difference (i.e. colour of light does NOT affect plant growth).
+
+This is call the NULL HYPOTHESIS and we assume that it is true.
 
 ---
 
@@ -94,7 +99,7 @@ class: center middle
 
 ???
 
-If the null hypothesis is true, then observing no difference between plants exposed to red or blue light is very probable.
+If the null hypothesis is true, then observing no difference between plants exposed to red or blue light is very probable, i.e. observing no difference has high probability.
 
 On the other hand, observing differences that are further away from 0 (in the positive and negative side) is very unlikely (it has very low probability of occurring).
 
@@ -106,9 +111,9 @@ class: center middle
 
 ???
 
-In other words, if it is true that there is no difference, observing big differences is a rare event.
+In other words, if it is true that there is no difference, observing big differences should be a rare event.
 
-So, `\(p\)` is the probability of finding a certain difference or even a bigger difference even though there is in fact no difference.
+So, a `\(p\)`-value is the probability of finding a certain difference or an even bigger difference even though there is in fact no difference (i.e. the null hypothesis is true).
 
 We want that probability to be as low as possible.
 
@@ -121,7 +126,7 @@ class: center middle
 
 ???
 
-The probability of finding a difference of +2cm when there is no difference is 0.03, in other words 3% probability.
+The probability of finding a difference of +2cm when in fact there is no difference is 0.03, in other words observing a +2cm difference has 3% probability of occurring if the null hypothesis is true.
 
 We want that probability to be as low as possible, but how low is low?
 
