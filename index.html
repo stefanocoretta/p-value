@@ -9,6 +9,7 @@
     <link href="libs/remark-css/shinobi.css" rel="stylesheet" />
     <link href="libs/remark-css/metropolis-fonts.css" rel="stylesheet" />
     <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="extra.css" type="text/css" />
   </head>
   <body>
     <textarea id="source">
@@ -25,19 +26,81 @@ class: center, middle, inverse, title-slide
 
 
 
-class: center middle
+# From research question to p-value
 
-![:scale 125%](img/nhst-p-value.png)
+&lt;br&gt;
+
+.center[![:scale 30%](img/mars.png)]
 
 ???
 
-Imagine we want to know if the colour of a light a plant is exposed to has an effect on the rate of growth of the plant.
+Let's imagine we want to more to Mars and grow crops and plants.
+
+Given the predominant colour of Mars, we wonder whether the light of the planet will have an effect on plant growth.
+
+---
+
+# From research question to p-value
+
+&lt;br&gt;
+
+&lt;br&gt;
+
+&lt;br&gt;
+
+![:scale 125%](img/nhst-p-value-1.png)
+
+???
+
+So now we want to know if the colour of the light a plant is exposed to has an effect on the rate of growth of the plant.
+
+---
+
+# From research question to p-value
+
+&lt;br&gt;
+
+&lt;br&gt;
+
+&lt;br&gt;
+
+![:scale 125%](img/nhst-p-value-2.png)
+
+???
 
 So we run an experiment: a group of plants is exposed to red light and another group is exposed to blue light.
 
-After a month of exposure, we measure the height of the plants in the two groups and we find that the plants exposed to the blue light are on average 2cm taller than the plants exposed to the red light.
+---
 
-We then run a statistical test which returns a *p*-value. More precisely, `\(p = 0.03\)`.
+# From research question to p-value
+
+&lt;br&gt;
+
+&lt;br&gt;
+
+&lt;br&gt;
+
+![:scale 125%](img/nhst-p-value-3.png)
+
+???
+
+After a month of exposure, we measure the height of the plants in the two groups and we find that the plants exposed to the blue light are on average 2 cm taller than the plants exposed to the red light.
+
+---
+
+# From research question to p-value
+
+&lt;br&gt;
+
+&lt;br&gt;
+
+&lt;br&gt;
+
+![:scale 125%](img/nhst-p-value-4.png)
+
+???
+
+We run a statistical test which returns a *p*-value. More precisely, `\(p = 0.03\)`.
 
 But what does the *p*-value mean?
 
@@ -51,7 +114,7 @@ class: center middle
 
 Let's step back a moment.
 
-In this experiment we got a result of +2cm (plants exposed to blue light were 2cm taller than plants exposed to red light).
+In this experiment we got a result of +2cm (plants exposed to blue light were 2 cm taller than plants exposed to red light).
 
 But this is just ONE experiment of many.
 
@@ -63,7 +126,7 @@ class: center middle
 
 ???
 
-So, now we want to know whether the result we observed in this one experiment would be observed again if we ran many more identical experiments (let's say, 100 experiments more, or 500, or an infinite number).
+So, now we want to know whether the result we observed in this one experiment would be observed again if we ran many more identical experiments.
 
 ---
 
@@ -73,9 +136,9 @@ class: center middle
 
 ???
 
-We want to know this because it is possible that, although we observed a difference of +2cm in this experiment, we might have observed no difference (i.e. difference = 0cm) in any other repetition of the experiment.
+We want to know this because it is possible that, although we observed a difference of +2 cm in this experiment, we might have observed no difference (i.e. difference = 0 cm) in any other repetition of the experiment.
 
-And we don't want this to happen! (We don't want to find a difference of +2cm while in fact there is no difference)
+And we don't want this to happen! (We don't want to find a difference of +2 cm while in fact there is no difference)
 
 ---
 
@@ -126,9 +189,9 @@ class: center middle
 
 ???
 
-The probability of finding a difference of +2cm when in fact there is no difference is 0.03, in other words observing a +2cm difference has 3% probability of occurring if the null hypothesis is true.
+The probability of finding a difference of +2 cm or an even bigger difference when in fact there is no difference is 0.03, in other words observing a +2 cm difference or a bigger difference has 3% probability of occurring if the null hypothesis is true.
 
-We want that probability to be as low as possible, but how low is low?
+In principle, we want that probability to be as low as possible, but in practice?
 
 We will talk about this and other aspects of p-values in our next class!
     </textarea>
