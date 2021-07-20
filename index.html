@@ -34,7 +34,7 @@ class: center, middle, inverse, title-slide
 
 ???
 
-Let's imagine we want to more to Mars and grow crops and plants.
+Let's imagine we want to move to Mars and grow plants to sustain our life there.
 
 Given the predominant colour of Mars, we wonder whether the light of the planet will have an effect on plant growth.
 
@@ -52,7 +52,7 @@ Given the predominant colour of Mars, we wonder whether the light of the planet 
 
 ???
 
-So now we want to know if the colour of the light a plant is exposed to has an effect on the rate of growth of the plant.
+So we want to know if the colour of the light a plant is exposed to has an effect on the rate of growth of the plant.
 
 ---
 
@@ -68,7 +68,7 @@ So now we want to know if the colour of the light a plant is exposed to has an e
 
 ???
 
-So we run an experiment: a group of plants is exposed to red light and another group is exposed to blue light.
+To find that out, we run an experiment: a group of plants is exposed to red light (similar to the light on Mars) and another group is exposed to blue light (similar to the light on Earth).
 
 ---
 
@@ -84,7 +84,7 @@ So we run an experiment: a group of plants is exposed to red light and another g
 
 ???
 
-After a month of exposure, we measure the height of the plants in the two groups and we find that the plants exposed to the blue light are on average 2 cm taller than the plants exposed to the red light.
+After a month, we measure the height of the plants in the two groups and we find that the plants exposed to the blue light are on average 2 cm taller than the plants exposed to the red light.
 
 ---
 
@@ -114,9 +114,9 @@ class: center middle
 
 Let's step back a moment.
 
-In this experiment we got a result of +2cm (plants exposed to blue light were 2 cm taller than plants exposed to red light).
+In this experiment we got a result of +2 cm (plants exposed to blue light were 2 cm taller than plants exposed to red light).
 
-But this is just ONE experiment of many.
+But this is just ONE experiment of infinite number of possible experiments.
 
 ---
 
@@ -126,7 +126,7 @@ class: center middle
 
 ???
 
-So, now we want to know whether the result we observed in this one experiment would be observed again if we ran many more identical experiments.
+We want to know whether the result we observed in this one experiment would be observed again if we ran many more identical experiments.
 
 ---
 
@@ -136,9 +136,11 @@ class: center middle
 
 ???
 
-We want to know this because it is possible that, although we observed a difference of +2 cm in this experiment, we might have observed no difference (i.e. difference = 0 cm) in any other repetition of the experiment.
+We want to know this because it is possible that, although we observed a difference of +2 cm in THIS experiment, we might have observed no difference (i.e. difference = 0 cm) in any OTHER repetition of the experiment.
 
 And we don't want this to happen! (We don't want to find a difference of +2 cm while in fact there is no difference)
+
+So this is what we do.
 
 ---
 
@@ -148,11 +150,9 @@ class: center middle
 
 ???
 
-So this is what we do.
+We assume that there is in fact no difference (i.e. colour of light does NOT affect plant growth).
 
-We assume that indeed there is in fact no difference (i.e. colour of light does NOT affect plant growth).
-
-This is call the NULL HYPOTHESIS and we assume that it is true.
+This is called the NULL HYPOTHESIS and we assume that it is true.
 
 ---
 
@@ -162,9 +162,9 @@ class: center middle
 
 ???
 
-If the null hypothesis is true, then observing no difference between plants exposed to red or blue light is very probable, i.e. observing no difference has high probability.
+If the null hypothesis is true, then we can expect that observing no difference between plants exposed to red or blue light is very probable, i.e. observing no difference has high probability.
 
-On the other hand, observing differences that are further away from 0 (in the positive and negative side) is very unlikely (it has very low probability of occurring).
+On the other hand, observing differences that are further away from 0 is very unlikely (it has very low probability of occurring).
 
 ---
 
@@ -174,11 +174,9 @@ class: center middle
 
 ???
 
-In other words, if it is true that there is no difference, observing big differences should be a rare event.
+In other words, if it is true that there is no difference in growth between plants exposed to red light and those exposed to blue light, then observing big differences should be a rare event.
 
-So, a `\(p\)`-value is the probability of finding a certain difference or an even bigger difference even though there is in fact no difference (i.e. the null hypothesis is true).
-
-We want that probability to be as low as possible.
+Now, the `\(p\)`-value is the probability of finding a certain difference or an even bigger difference even though there is in fact no difference between groups (i.e. when assuming the null hypothesis is true).
 
 ---
 
@@ -189,11 +187,33 @@ class: center middle
 
 ???
 
-The probability of finding a difference of +2 cm or an even bigger difference when in fact there is no difference is 0.03, in other words observing a +2 cm difference or a bigger difference has 3% probability of occurring if the null hypothesis is true.
+In our plant experiment, we observed a 2 cm increase in plant growth if the light was blue.
 
-In principle, we want that probability to be as low as possible, but in practice?
+The `\(p\)`-value was 0.03.
 
-We will talk about this and other aspects of p-values in our next class!
+This means that, assuming that in fact there is no difference, the probability of finding a difference of +2 cm or a bigger difference is 0.03.
+
+---
+
+class: center middle
+
+![](index_files/figure-html/p-value-2-1.png)&lt;!-- --&gt;
+
+???
+
+In other words, observing a +2 cm difference or a bigger difference has 3% probability of occurring if the null hypothesis is true.
+
+---
+
+class: center middle
+
+![](img/nhst-blue-houses.png)
+
+???
+
+So, do we need to install blue lights in green houses on Mars?
+
+In our next class we will see how to use the p-value to make up our minds!
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
