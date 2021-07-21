@@ -157,7 +157,7 @@ This is called the NULL HYPOTHESIS and we assume that it is true.
 
 class: center middle
 
-```{r null-probs, fig.width=13, fig.height=7}
+```{r null-probs, fig.width=13, fig.height=7, dpi=600, fig.retina=TRUE}
 x <- seq(-4, 4, by = 0.01)
 y <- dnorm(x)
 
@@ -197,7 +197,7 @@ On the other hand, observing differences that are further away from 0 is very un
 
 class: center middle
 
-```{r rare-events, fig.width=13, fig.height=7}
+```{r rare-events, fig.width=13, fig.height=7, dpi=600, fig.retina=TRUE}
 x <- seq(-4, 4, by = 0.01)
 y <- dnorm(x)
 
@@ -237,32 +237,32 @@ Now, the $p$-value is the probability of finding a certain difference or an even
 
 class: center middle
 
-```{r p-value, fig.width=13, fig.height=7}
+```{r p-value, fig.width=13, fig.height=7, dpi=600, fig.retina=TRUE}
 x <- seq(-4, 4, by = 0.01)
 y <- dnorm(x)
 
 labels <- tibble(
-  x = c(0, qnorm(0.03, lower.tail = FALSE), -2.5, 3),
-  y = c(-0.025, -0.025, 0.36, 0.1),
-  labs = c("0", "+2cm", "high probability", "p = 0.03")
+  x = c(0, qnorm(0.03, lower.tail = FALSE), 3),
+  y = c(-0.025, -0.025, 0.1),
+  labs = c("0", "+2cm", "p = 0.03")
 )
 
 arrows <- tibble(
-  x1 = c(-1.5, 3),
-  y1 = c(0.4 - 0.025, 0.1 - 0.025),
-  x2 = c(-0.4, 2.1),
-  y2 = c(0.4 - 0.015, 0)
+  x1 = c(3),
+  y1 = c(0.1 - 0.025),
+  x2 = c(2.1),
+  y2 = c(0.02)
 )
 
 ggplot() +
   aes(x, y) +
   geom_ribbon(aes(ymin = 0, ymax = y), fill = "#7570b3", alpha = 0.4) +
-  geom_segment(aes(x = 0, y = 0, xend = 0, yend = max(y)), colour = "#1b9e77", size = 3) +
-  geom_text(data = labels, aes(x, y, label = labs), size = c(15, 15, 15, 16), family = "Brandon Grotesque Medium", colour = c("black", "black", "black", "#d95f02")) +
+  geom_ribbon(aes(x = ifelse(x >= qnorm(0.03, lower.tail = FALSE), x, NA), ymin = 0, ymax = y), fill = "#1b9e77", alpha = 0.7) +
+  geom_text(data = labels, aes(x, y, label = labs), size = c(15, 15, 16), family = "Brandon Grotesque Medium", colour = c("black", "black", "#d95f02")) +
   geom_curve(
     data = arrows, aes(x = x1, y = y1, xend = x2, yend = y2),
     arrow = arrow(length = unit(0.3, "inch"), type = "closed"), size = 1,
-    color = c("gray20", "#d95f02"), curvature = -0.3
+    color = c("#d95f02"), curvature = -0.3
   ) +
   annotate("point", x = qnorm(0.03, lower.tail = FALSE), y = 0, size = 8) +
   theme_void()
@@ -281,32 +281,32 @@ This means that, assuming that in fact there is no difference, the probability o
 
 class: center middle
 
-```{r p-value-2, fig.width=13, fig.height=7}
+```{r p-value-2, fig.width=13, fig.height=7, dpi=600, fig.retina=TRUE}
 x <- seq(-4, 4, by = 0.01)
 y <- dnorm(x)
 
 labels <- tibble(
-  x = c(0, qnorm(0.03, lower.tail = FALSE), -2.5, 3),
-  y = c(-0.025, -0.025, 0.36, 0.1),
-  labs = c("0", "+2cm", "high probability", "p = 0.03")
+  x = c(0, qnorm(0.03, lower.tail = FALSE), 3),
+  y = c(-0.025, -0.025, 0.1),
+  labs = c("0", "+2cm", "p = 0.03")
 )
 
 arrows <- tibble(
-  x1 = c(-1.5, 3),
-  y1 = c(0.4 - 0.025, 0.1 - 0.025),
-  x2 = c(-0.4, 2.1),
-  y2 = c(0.4 - 0.015, 0)
+  x1 = c(3),
+  y1 = c(0.1 - 0.025),
+  x2 = c(2.1),
+  y2 = c(0.02)
 )
 
 ggplot() +
   aes(x, y) +
   geom_ribbon(aes(ymin = 0, ymax = y), fill = "#7570b3", alpha = 0.4) +
-  geom_segment(aes(x = 0, y = 0, xend = 0, yend = max(y)), colour = "#1b9e77", size = 3) +
-  geom_text(data = labels, aes(x, y, label = labs), size = c(15, 15, 15, 16), family = "Brandon Grotesque Medium", colour = c("black", "black", "black", "#d95f02")) +
+  geom_ribbon(aes(x = ifelse(x >= qnorm(0.03, lower.tail = FALSE), x, NA), ymin = 0, ymax = y), fill = "#1b9e77", alpha = 0.7) +
+  geom_text(data = labels, aes(x, y, label = labs), size = c(15, 15, 16), family = "Brandon Grotesque Medium", colour = c("black", "black", "#d95f02")) +
   geom_curve(
     data = arrows, aes(x = x1, y = y1, xend = x2, yend = y2),
     arrow = arrow(length = unit(0.3, "inch"), type = "closed"), size = 1,
-    color = c("gray20", "#d95f02"), curvature = -0.3
+    color = c("#d95f02"), curvature = -0.3
   ) +
   annotate("point", x = qnorm(0.03, lower.tail = FALSE), y = 0, size = 8) +
   annotate("text", x = 2.5, y = 0.35, label = "p-value = The probability of finding a certain difference,\nor a bigger difference,\nassuming that there is no difference", size = 5) +
